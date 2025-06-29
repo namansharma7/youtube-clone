@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { fetchData } from '../utils/rapidapi';
 import ReactPlayer from 'react-player';
-import { BsFillCheckCircleFill, BsFilterLeft, BsPersonCircle, BsThreeDots } from 'react-icons/bs';
+import { BsFillCheckCircleFill, BsFilterLeft, BsPersonCircle, BsThreeDots, BsThreeDotsVertical  } from 'react-icons/bs';
 import { abbreviateNumber } from 'js-abbreviation-number';
 import { AiOutlineLike } from 'react-icons/ai';
 import { PiShareFat, PiThumbsDownLight, PiThumbsDownThin, PiThumbsUpLight } from 'react-icons/pi';
 import { LiaDownloadSolid } from 'react-icons/lia';
 import { GoBookmark } from 'react-icons/go';
 import { IoFlagOutline } from 'react-icons/io5';
+import Lion from '../../public/images/Lion.jpg';
+import Mountains from '../../public/images/Mountains.jpg';
+import YoutubeThumbnail1 from '../../public/images/YoutubeThumbnail1.jpg';
+import YoutubeThumbnail2 from '../../public/images/YoutubeThumbnail2.jpg';
 
 function VideoPlayer() {
 	const [video, setVideo] = useState();
@@ -33,10 +37,10 @@ function VideoPlayer() {
 	};
 
 	return (
-		<div className="flex justify-center mt-16 px-4">
+		<div className="flex justify-center mt-2 px-6 md:px-12">
 			<div className="w-full max-w-[1500px] flex flex-col lg:flex-row gap-4">
 				{/* Left Section */}
-				<div className="flex-1 flex flex-col p-4">
+				<div className="flex-1 flex flex-col p-2">
 					{/* Video player with fixed aspect ratio */}
 					<div className="aspect-video bg-black rounded-lg overflow-hidden">
 						<ReactPlayer
@@ -203,11 +207,442 @@ function VideoPlayer() {
 					</div>
 				</div>
 
-
-
 				{/* Right Section - Related Videos */}
-				<div className="w-full lg:w-[350px] xl:w-[400px]">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-3 w-full lg:w-[400px]">
+
 					{/* Placeholder for related videos */}
+
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={YoutubeThumbnail1} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+						
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={YoutubeThumbnail2} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={Lion} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={Mountains} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={YoutubeThumbnail1} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={YoutubeThumbnail2} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={Lion} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={Mountains} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={YoutubeThumbnail1} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={YoutubeThumbnail2} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={Lion} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
+					<div className="flex gap-3 justify-evenly mb-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg flex-col lg:flex-row">
+						<div className="w-full h-44 sm:h-44 md:h-40 lg:w-[400px] lg:h-20">
+							<img src={Mountains} alt='title' className="w-full h-full rounded-md" />
+						</div>
+						<div className="flex flex-col">
+							<div className="related-video-title flex">
+								<h3 className="text-sm font-semibold leading-snug line-clamp-2">
+									Kolkata Law Student Case : कानून की छात्रा से दुष्कर्म, Dilip Ghosh ने CM Mamta को जमकर सुनाया
+								</h3>
+								<details className="relative">
+									<summary className="list-none cursor-pointer">
+										<div className="flex justify-center items-center px-2 py-2">
+											<BsThreeDotsVertical className="text-xl" />
+										</div>
+									</summary>
+
+									<ul className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 text-sm text-gray-800">
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<LiaDownloadSolid className='text-lg' />Download
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<GoBookmark className="text-lg" />
+											Save
+										</li>
+										<li className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex gap-2">
+											<IoFlagOutline className="text-lg" />
+											Report
+										</li>
+									</ul>
+								</details>
+
+							</div>
+							<p className="text-xs text-gray-600">Amar Ujala</p>
+							<p className="text-xs text-gray-500">25k • 14 hours days</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
