@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Home from './components/Home';
 import Search from './components/Search';
@@ -12,12 +12,13 @@ import { Loading } from './loader/Loading';
 
 function App() {
 	const {loading} = useAuth();
+	const [isSidebarOpen, setIsSidebarOpen] =useState(false);
 	//if (loading) return <Loading />;
 	return (
 		<div className='h-[calc(100vh)] overflow-y-scroll overflow-x-hidden'>
-			<Navbar />
+			<Navbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}/>
 			<Routes>
-				<Route path="/" exact element={<Home />} />
+				<Route path="/" exact element={<Home isSidebarOpen={isSidebarOpen} toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}/>} />
 				<Route path="/search/:searchQuery" element={<Search />} />
 				<Route path="/video/:id" element={<VideoPlayer />} />
 			</Routes>

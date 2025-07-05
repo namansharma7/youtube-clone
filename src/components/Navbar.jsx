@@ -10,7 +10,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 import YoutubeLogo from '../../public/images/YoutubeLogo.png';
 
-function Navbar() {
+function Navbar({toggleSidebar}) {
 
 	const [searchTerm, setSearchTerm] = useState('');
 	const navigate = useNavigate();
@@ -28,9 +28,12 @@ function Navbar() {
 	};
 
 	return (
-		<header className='flex justify-between px-4 py-2 bg-gray-50'>
+		<header className='flex justify-between items-center px-4 py-2 bg-gray-50'>
 			<div className='flex items-center space-x-4'>
-				<div className="w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-200 rounded-full transition duration-100">
+				<div
+					className="w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-200 rounded-full transition duration-100"
+					onClick={toggleSidebar}
+				>
 					<AiOutlineMenu className='h-5 w-5' />
 				</div>
 				<Link to="/">
@@ -39,7 +42,7 @@ function Navbar() {
 			</div>
 
 			<div className='hidden md:flex w-[54%]'>
-				<div className='relative w-full border border-gray-400 rounded-l-full bg-white px-3 py-2'>
+				<div className='relative w-full border border-gray-400 rounded-l-full bg-white px-3 py-1'>
 					<input
 						type="text"
 						placeholder="Search"
@@ -57,16 +60,16 @@ function Navbar() {
 				</div>
 				<button
 					onClick={handleSearch}
-					className='px-4 py-3 bg-gray-100 cursor-pointer rounded-r-full border border-gray-400'
+					className='px-4 py-1 bg-gray-100 cursor-pointer rounded-r-full border border-gray-400'
 				>
 					<CiSearch className='w-5 h-5' />
 				</button>
-				<IoMic className='w-10 h-10 bg-gray-100 ml-3 border rounded-full p-2 cursor-pointer hover:bg-gray-200 duration-200' />
+				<IoMic className='w-10 h-10 bg-gray-100 ml-3 border rounded-full px-2 py-1 cursor-pointer hover:bg-gray-200 duration-200' />
 			</div>
 
 			<div className='flex justify-between item-center space-x-5'>
-				<RiVideoAddLine className='h-6 w-6 cursor-pointer' />
-				<AiOutlineBell className='h-6 w-6 cursor-pointer' />
+				<RiVideoAddLine className='h-6 w-6 cursor-pointer hidden md:block' />
+				<AiOutlineBell className='h-6 w-6 cursor-pointer hidden md:block' />
 				<FaRegUserCircle className='h-6 w-6 cursor-pointer' />
 			</div>
 		</header >
